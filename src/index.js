@@ -85,5 +85,17 @@ function TodoApp({ todos, onToggleTodo }) {
     />;
 }
 
+function TodoList({ todos, onToggleTodo }) {
+    return (
+        <div>
+            {todos.map(todo => <TodoItem
+                key={todo.id}
+                todo={todo}
+                onToggleTodo={onToggleTodo}
+            />)}
+        </div>
+    );
+}
+
 ReactDOM.render(<TodoApp />, document.getElementById('root'));
 
