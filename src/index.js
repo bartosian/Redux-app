@@ -71,8 +71,18 @@ function doSetFilter(filter) {
     };
 }
 
-    function TodoApp() {
-    return <div>Todo App</div>;
+const rootReducer = combineReducers({
+    todoState: todoReducer,
+    filterState: filterReducer,
+});
+
+const store = createStore(rootReducer);
+
+function TodoApp({ todos, onToggleTodo }) {
+    return <TodoList
+        todos={todos}
+        onToggleTodo={onToggleTodo}
+    />;
 }
 
 ReactDOM.render(<TodoApp />, document.getElementById('root'));
