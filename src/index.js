@@ -24,6 +24,18 @@ function todoReducer(state = todos, action) {
     }
 }
 
+function applyAddTodo(state, action) {
+    const todo = Object.assign({}, action.todo, { completed: false });
+    return state.concat(todo);
+}
+
+function applyToggleTodo(state, action) {
+    return state.map(todo =>
+        todo.id === action.todo.id
+            ? Object.assign({}, todo, { completed: !todo.completed })
+            : todo
+    );
+}
 
 function filterReducer(state = 'SHOW_ALL', action) {
     switch(action.type) {
