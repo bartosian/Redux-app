@@ -1,16 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { combineReducers, createStore } from 'redux';
-import './index.css';
 
-const TODO_ADD = 'TODO_ADD';
-const TODO_TOGGLE = 'TODO_TOGGLE';
-const FILTER_SET = 'FILTER_SET';
-
-const todos = [
-    { id: '0', name: 'learn redux' },
-    { id: '1', name: 'learn mobx' },
-];
 
 function todoReducer(state = todos, action) {
     switch(action.type) {
