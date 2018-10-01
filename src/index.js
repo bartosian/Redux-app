@@ -97,3 +97,21 @@ function TodoList({ todos, onToggleTodo }) {
     );
 }
 
+function TodoItem({ todo, onToggleTodo }) {
+    const { name, id, completed } = todo;
+    return (
+        <div>
+            <div>
+            {name}
+            <button
+                type="button"
+                onClick={() => onToggleTodo(id)}
+            >
+                {completed ? "Incomplete" : "Complete"}
+            </button>
+        </div>
+            );
+            }
+
+            ReactDOM.render(<TodoApp />, document.getElementById('root'));
+
